@@ -17,15 +17,11 @@
           <td>{{ car.model }}</td>
           <td>{{ car.manufacturer.name }}</td>
           <td>
-            {% if car.drivers.all %}
               {% for driver in car.drivers.all %}
                 {{ driver.username }}{% if not forloop.last %}, {% endif %}
               {% empty %}
                 No drivers
               {% endfor %}
-            {% else %}
-              No drivers
-            {% endif %}
           </td>
         </tr>
       {% empty %}
